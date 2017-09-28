@@ -1,0 +1,101 @@
+.slices {
+	/* All variables can be set in the JS */
+	--slices-width: 100vw;
+	--slices-height: 100vh;
+	--slices: 30;
+	--gap: 0px;
+	width: 100vw;
+	width: var(--slices-width); 
+	height: 100vh;
+	height: var(--slices-height); 
+	display: grid;
+	grid-template-columns: repeat(var(--slices), 1fr);
+	grid-gap: var(--gap);
+	position: fixed;
+	top: 0;
+	transition: opacity 500ms ease;
+}
+
+.slices--animateOut {
+	opacity: 0;
+}
+
+/* Horizontal slices */
+.slices--horizontal,
+.slices--horizontal .slice {
+	grid-template-columns: none;
+	grid-template-rows: repeat(var(--slices), 1fr);
+}
+
+/* Fallback / NoJS */
+.slices--fallback,
+.no-js .slices {
+	background-size: cover;
+	background-position: 50% 50%;
+	background-image: url(../img/1_1.jpg);
+}
+
+.demo-2 .slices--fallback,
+.demo-2 .no-js .slices {
+	background-image: url(../img/2_1.jpg);
+}
+
+.demo-3 .slices--fallback,
+.demo-3 .no-js .slices {
+	background-image: url(../img/3_1.jpg);
+}
+
+.slice {
+	position: relative;
+	overflow: hidden;
+}
+
+.slice__inner {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.slice__bg {
+	width: 100vw;
+	width: var(--slices-width);
+	height: 100vh;
+	height: var(--slices-height);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* Offset layout */
+.slices--layout-offset {
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0);
+}
+
+.slices--layout-offset.slices--vertical .slice {
+	height: 90%;
+}
+
+.slices--layout-offset.slices--vertical .slice--odd {
+	top: 10%;
+}
+
+.slices--layout-offset.slices--horizontal .slice {
+	width: 90%;
+}
+
+.slices--layout-offset.slices--horizontal .slice--odd {
+	left: 10%;
+}
+
+/* Hack for last slice gap rendering */
+.demo-1 .slices,
+.demo-2 .slices,
+.demo-3 .slices {
+	width: calc(var(--slices-width) + 3px);
+	height: calc(var(--slices-height) + 3px);
+}

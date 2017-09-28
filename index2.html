@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Sliced Dual Image Layout| Demo 2 | Codrops</title>
+		<meta name="description" content="A simple decorative dual image layout with alternating background image slices" />
+		<meta name="keywords" content="web design, demo, slices, switch effect, background image, css, javascript" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Archivo+Black" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="pater/pater.css" />
+		<script>document.documentElement.className = 'js';</script>
+	</head>
+	<body class="demo-2 loading">
+		<svg class="hidden">
+			<symbol id="icon-arrow" viewBox="0 0 24 24">
+				<title>arrow</title>
+				<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
+			</symbol>
+			<symbol id="icon-drop" viewBox="0 0 24 24">
+				<title>drop</title>
+				<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/><path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
+			</symbol>
+			<symbol id="icon-github" viewBox="0 0 32.6 31.8">
+				<title>github</title>
+				<path d="M16.3,0C7.3,0,0,7.3,0,16.3c0,7.2,4.7,13.3,11.1,15.5c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4C7.4,10.7,6.8,9,7.7,6.8c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C32.6,7.3,25.3,0,16.3,0z"/>
+			</symbol>
+			<symbol id="icon-keyboard" viewBox="0 0 100 70">
+				<title>keyboard</title>
+				<!-- https://thenounproject.com/term/keyboard/783/ by Paul te Kortschot from the Noun Project -->
+				<path d="M 60.94,1.83 39.22,1.83 C 36.71,1.83 34.67,3.86 34.67,6.376 L 34.67,28.1 C 34.67,30.61 36.71,32.65 39.22,32.65 L 60.94,32.65 C 63.45,32.65 65.5,30.61 65.5,28.1 L 65.5,6.376 C 65.5,3.86 63.45,1.83 60.94,1.83 Z M 44.79,18.63 50.08,11.74 55.37,18.63 Z" opacity="0.2"/>
+				<path d="M 60.86,36.75 39.14,36.75 C 36.63,36.75 34.59,38.79 34.59,41.3 L 34.59,63.02 C 34.59,65.53 36.63,67.57 39.14,67.57 L 60.86,67.57 C 63.38,67.57 65.41,65.53 65.41,63.02 L 65.41,41.3 C 65.42,38.79 63.38,36.75 60.86,36.75 Z M 50.08,57.45 44.79,50.55 55.37,50.55 Z" opacity="0.2" />
+				<path d="M 95.45,36.75 73.73,36.75 C 71.22,36.75 69.18,38.79 69.18,41.3 L 69.18,63.02 C 69.18,65.53 71.22,67.57 73.73,67.57 L 95.45,67.57 C 97.97,67.57 100,65.53 100,63.02 L 100,41.3 C 100,38.79 97.97,36.75 95.45,36.75 Z M 83.4,57.45 83.4,46.86 90.3,52.16 Z" />
+				<path d="M 26.27,36.75 4.55,36.75 C 2.037,36.75 0,38.79 0,41.3 L 0,63.02 C 0,65.53 2.037,67.57 4.55,67.57 L 26.27,67.57 C 28.78,67.57 30.82,65.53 30.82,63.02 L 30.82,41.3 C 30.82,38.79 28.78,36.75 26.27,36.75 Z M 16.69,57.45 9.79,52.16 16.69,46.86 Z" />
+			</symbol>
+		</svg>
+		<div class="hidden">
+			<img src="img/4_1.jpg" alt=""/>
+			<img src="img/4_2.jpg" alt=""/>
+			<img src="img/5_1.jpg" alt=""/>
+			<img src="img/5_2.jpg" alt=""/>
+			<img src="img/6_1.jpg" alt=""/>
+			<img src="img/6_2.jpg" alt=""/>
+		</div>
+		<main>
+			<div class="content content--fixed">
+				<header class="codrops-header">
+					<div class="codrops-links">
+						<a class="codrops-icon codrops-icon--prev" href="https://tympanus.net/Development/ShapeMorphIdeas/" title="Previous Demo"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
+						<a class="codrops-icon codrops-icon--drop" href="https://tympanus.net/codrops/?p=32314" title="Back to the article"><svg class="icon icon--drop"><use xlink:href="#icon-drop"></use></svg></a>
+					</div>
+					<h1 class="codrops-header__title">Sliced Dual Image Layout</h1>
+				</header>
+				<a class="github" href="https://github.com/codrops/SlicedDualImageLayout/" title="Find this project on GitHub"><svg class="icon icon--github"><use xlink:href="#icon-github"></use></svg></a>
+				<nav class="demos">
+					<svg class="icon icon--keyboard"><use xlink:href="#icon-keyboard"></use></svg>
+					<a class="demo" href="index.html"><span>Layout 1</span></a>
+					<a class="demo demo--current" href="index2.html"><span>Layout 2</span></a>
+					<a class="demo" href="index3.html"><span>Layout 3</span></a>
+				</nav>
+				<a class="pater" href="http://synd.co/2evXpPU" onClick="recordOutboundLink(this, 'Outbound Links', 'FullStoryDemo02692017');return false;">
+					<div class="pater__img"></div>
+					<h3 class="pater__title">​See Every Click, Swipe, and Scroll</h3>
+					<p class="pater__description">See how users experience your designs with FullStory. <strong>Get it free today!</strong></p>
+				</a>
+			</div>
+			<div class="slices"></div>
+			<div class="slides">
+				<div class="slide grid slide--current" id="slide-1" data-image-even='img/4_1.jpg' data-image-odd='img/4_2.jpg'>
+					<div class="grid__item">Harry Red</div>
+					<div class="grid__item grid__item--deco-1">Intercom Creation</div>
+					<div class="grid__item">Hub</div>
+					<div class="grid__item">Point</div>
+				</div>
+				<div class="slide grid" id="slide-2" data-image-even='img/5_1.jpg' data-image-odd='img/5_2.jpg'>
+					<div class="grid__item">Joe Grand</div>
+					<div class="grid__item grid__item--deco-1">Density Population</div>
+					<div class="grid__item">Rick's</div>
+					<div class="grid__item">Place</div>
+				</div>
+				<div class="slide grid" id="slide-3" data-image-even='img/6_1.jpg' data-image-odd='img/6_2.jpg'>
+					<div class="grid__item">Lara Kuhn</div>
+					<div class="grid__item grid__item--deco-1">Fashion Trivialities</div>
+					<div class="grid__item">QXF</div>
+					<div class="grid__item">Dome</div>
+				</div>
+				<nav class="slides__nav">
+					<a href="#slide-1" class="slides__nav-item slides__nav-item--current">Berlin</a>
+					<a href="#slide-2" class="slides__nav-item">Mumbai</a>
+					<a href="#slide-3" class="slides__nav-item">Tokyo</a>
+				</nav>
+				<div class="date">3 &rarr; 10 Feb 2018</div>
+			</div>
+		</main>
+		<script src="js/charming.min.js"></script>
+		<script src="js/anime.min.js"></script>
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/demo.js"></script>
+		<script src="js/glitchFx.js"></script>
+		<script src="js/dil.js"></script>
+		<script>
+		{
+			const slidesItems = Array.from(document.querySelectorAll('.slides > .slide'));
+			const imgs = {even:[],odd:[]};
+			slidesItems.forEach((item) => {
+				imgs.even.push(item.dataset.imageEven);
+				imgs.odd.push(item.dataset.imageOdd);
+			});
+
+			const dil = new DualImageLayout(document.querySelector('.slices'), {
+				images: {even: imgs.even[0],odd: imgs.odd[0]},
+				slices: 100
+			});
+			
+			imagesLoaded(document.body, { background: true }, () => {
+               	document.body.classList.remove('loading');	
+				animateGridItems();
+            });
+
+			let isAnimating = true;
+			let currentSlide = 0;
+			const slidesNavItems = Array.from(document.querySelectorAll('.slides__nav > .slides__nav-item'));
+			const changeLocation = (ev,pos) => {
+				ev.preventDefault();
+				if ( pos === currentSlide || isAnimating ) {
+					return false;
+				}
+
+				ev.target.classList.add('slides__nav-item--current');
+				slidesNavItems[currentSlide].classList.remove('slides__nav-item--current');
+				
+				animateGridItems(currentSlide,pos);
+				currentSlide = pos;
+				dil.switchImages(imgs.even[currentSlide],imgs.odd[currentSlide],true);
+			};
+			slidesNavItems.forEach((item, pos) => item.addEventListener('click', (ev) => changeLocation(ev,pos)));
+
+			const gridItemsLetters = [];
+			slidesItems.forEach((item) => {
+				Array.from(item.querySelectorAll('.grid__item')).forEach((gridItem) => charming(gridItem));
+				gridItemsLetters.push(Array.from(item.querySelectorAll('span')));
+			});
+
+			const animateGridItems = (currentSlide = -1, pos = 0) => {
+				isAnimating = true;
+				const newLettersFn = () => {
+					const promises = [];
+					for (lettersGroup of gridItemsLetters[pos]) {
+						promises.push(anime({
+							targets: lettersGroup,
+							duration: 900,
+							elasticity: 600,
+							delay: (t,i) => anime.random(200,1000),
+							opacity: {
+								value: [0,1],
+								duration: 20,
+								easing: 'linear'
+							},
+							scale: [0,1],
+							before: () => lettersGroup.style.opacity = 0
+						}).finished);
+					}
+					Promise.all(promises).then(()=> isAnimating = false);
+				};
+
+				if ( currentSlide !== -1 ) {
+					const promises = [];
+					for (lettersGroup of gridItemsLetters[currentSlide]) {
+						promises.push(anime({
+							targets: lettersGroup,
+							duration: 200,
+							easing: 'easeOutQuad',
+							delay: (t,i) => anime.random(200,1000),
+							opacity: 0,
+							scale: 0,
+							before: () => lettersGroup.style.opacity = 1
+						}).finished);
+					}
+					Promise.all(promises).then(()=> newLettersFn());
+				}
+				else {
+					newLettersFn();
+				}
+			};
+
+			const glitchText = document.querySelector('.date');
+			charming(glitchText);
+			Array.from(glitchText.querySelectorAll('span')).forEach(letter => {
+				letter.style.opacity = 1;
+				new GlitchFx(letter).glitch();
+			});
+			
+			// Demo purposes only..
+			new GlitchFx(document.querySelector('.pater > .pater__img'), {
+				// Max and Min values for the time when to start the effect.
+                glitchStart: {min: 1000, max: 5000},
+                // Max and Min values of time that an element keeps each state.
+                glitchState: {min: 50, max: 100},
+                // Number of times the glitch action is performed per iteration.
+				glitchTotalIterations: 3
+			}).glitch();
+		}
+		</script>
+	</body>
+</html>
